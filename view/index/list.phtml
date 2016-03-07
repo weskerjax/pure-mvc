@@ -1,0 +1,31 @@
+
+<?php function pageBlock($viewData){?>
+	
+  <h1><?=_e($viewData['page_title'])?></h1>
+  <div><a href="?a=edit">新增</a></div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Id</th>
+        <th>名稱</th>
+        <th class="auto">備註</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <?php foreach(_a($viewData['result']) as $row):?>
+          <tr>
+            <td><a href="?a=edit&id=<?=$row['id']?>">編輯</a></td>
+            <td><?=$row['id']?></td>
+            <td><?=_e($row['name'])?></td>
+            <td class="auto"><?=_e($row['remark'])?></td>
+          </tr>
+	  <?php endforeach;?>
+    </tbody>
+  </table>
+	
+<?php } ?>
+
+

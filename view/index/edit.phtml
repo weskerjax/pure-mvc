@@ -1,0 +1,29 @@
+
+
+<?php function pageBlock($viewData){?>
+  <h1><?=_e($viewData['page_title'])?></h1>
+  <form method="post" action="">	
+    <input name="id" value="<?=_e($_REQUEST['id'])?>" type="hidden" />
+    
+    <div>
+      <label>名稱
+        <input type="text" name="name" value="<?=_e($_REQUEST['name'])?>" required="" />
+      </label>
+    </div>
+    <div>
+      <label>備註
+        <input type="text" name="remark" value="<?=_e($_REQUEST['remark'])?>" />
+      </label>
+    </div>
+	
+	<p>
+	  <button type="button" onclick="location='?a=list'">返回</button>
+	  <button type="submit">儲存</button>
+	  
+	  <?php if($_REQUEST['id']):?>
+	    <button type="submit" name="delete" value="1" onclick="return confirm('確定要刪除?');">刪除</button>	  
+	  <?php endif;?>	  	  
+	</p>
+  </form>		
+<?php } ?>
+

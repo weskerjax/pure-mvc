@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<?php include(dirname(__FILE__).'/_head.cfg.phtml')?>
+	<?php if(function_exists('headBlock')): headBlock($viewData); endif;?>
+</head>
+
+<body id="MainLayout">
+  <!-- 狀態訊息 -->
+  <div id="StatusMsg">
+	<?php if($_GET['msg']):?>
+      <span><?=_e($_GET['msg'])?></span>
+	<?php endif;?>
+  </div>
+    
+  <div id="ContainerWrapper" class="clearfix">
+	<?php if(function_exists('pageBlock')): pageBlock($viewData); endif;?>
+  </div>
+</body>
+</html>
+
